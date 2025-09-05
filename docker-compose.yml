@@ -2,11 +2,11 @@ version: '3.8'
 
 services:
   java-app:
-    image: 178.128.161.182:8086/java1.0:latest  # Use the image you created earlier
+    build: .              # builds image from your Dockerfile
     ports:
-      - "8080:8080"  # Expose port 8080 (or whichever port your app uses)
+      - "8080:8080"       # makes app available on localhost:8080
     environment:
-      - DB_HOST=mysql  # Point to the MySQL container (the service name)
+      - DB_HOST=mysql     # tells app where the DB is (service name = mysql)
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_NAME=${DB_NAME}
@@ -14,16 +14,16 @@ services:
       - app-network
 
   mysql:
-    image: mysql:5.7  # Use the official MySQL image
+    image: mysql:5.7      # official MySQL image
     environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}  # Root password for MySQL
-      - MYSQL_DATABASE=${MYSQL_DATABASE}  # Database to create
-      - MYSQL_USER=${MYSQL_USER}  # Custom user for MySQL
-      - MYSQL_PASSWORD=${MYSQL_PASSWORD}  # Custom user password
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - mysql-data:/var/lib/mysql  # saves DB data so it doesn’t disappear
     networks:
       - app-network
-    volumes:
-      - mysql-data:/var/lib/mysql  # Persist MySQL data
 
 networks:
   app-network:
