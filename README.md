@@ -127,8 +127,12 @@ This project shows how GitHub Actions can transform a manual Java testing workfl
 It provides quick feedback, reduces human error, and makes development faster and more reliable.
 
 
+---
 
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/510e5564-cde5-46ea-8ce8-e8101ec16dfe" />
+# Photographic  evidence
+
+<img width="1023" height="444" alt="2025-09-11_10h56_21" src="https://github.com/user-attachments/assets/cbde6d14-2144-4e32-8649-ccfcfd5e77ef" />
+
 
 
 
