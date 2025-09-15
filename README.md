@@ -73,14 +73,14 @@ Developer
 
 ---
 
-### 1️⃣ Build & Test
+# 1️- Build & Test
 - Java app built with **Gradle**
 - Unit tests run automatically  
 ./gradlew build
 
 ---
 
-2️⃣ GitHub Actions Workflow
+# 2- GitHub Actions Workflow
 
 Workflow file: .github/workflows/ci.yml
 Runs on every push or pull request:
@@ -92,7 +92,8 @@ Set up Java
 Run Gradle build & tests
 
 Upload reports
-3️⃣ Docker (Optional)
+
+# 3️- Docker (Optional)
 
 App can be containerized:
 
