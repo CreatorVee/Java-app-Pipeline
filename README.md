@@ -1,9 +1,9 @@
 ---
 
-# ⚙ Java CI/CD Pipeline Project
+# Java CI/CD Pipeline Project
 
 ---
-### 🛠 Tech Stack
+### Tech Stack
 
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://github.com/CreatorVee/Java-app-Pipeline/blob/main/Dockerfile)
 [![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/CreatorVee/Java-app-Pipeline/actions)
@@ -12,7 +12,7 @@
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://github.com/CreatorVee/Java-app-Pipeline/blob/main/README.md#deployment)
 ---
 
-## 📝 Project Overview
+##  Project Overview
 
 This repository demonstrates a **CI/CD pipeline for a Java application** using **GitHub Actions**.  
 
@@ -49,7 +49,7 @@ java-app/
 └── README.md
 
 ---
-## 🔄 CI/CD Workflow
+## CI/CD Workflow
 Developer  
 │  
 ▼  
@@ -82,49 +82,50 @@ Developer
 
 # 2- GitHub Actions Workflow
 
-Workflow file: .github/workflows/ci.yml
+- Workflow file: .github/workflows/ci.yml
 Runs on every push or pull request:
 
-Checkout repo
+- Checkout repo
 
-Set up Java
+- Set up Java
 
-Run Gradle build & tests
+- Run Gradle build & tests
 
-Upload reports
+- Upload reports
 
 # 3️- Docker (Optional)
 
-App can be containerized:
+- App can be containerized:
 
-docker build -t java-app .
-docker run -p 8080:8080 java-app
+- docker build -t java-app .
+- docker run -p 8080:8080 java-app
 
 ---
 
-📌 Notes
-CI/CD Pipeline Benefits: Automated workflows significantly reduce bugs reaching production, accelerate testing cycles, and ensure more reliable deployments with rollback capabilities
+# Notes
 
-Gradle Build System: Provides powerful dependency management and build automation - learned to leverage incremental builds for faster compilation and better resource utilization
+- CI/CD Pipeline Benefits: Automated workflows significantly reduce bugs reaching production, accelerate testing cycles, and ensure more reliable deployments with rollback capabilities
 
-
-GitHub Actions: Discovered the importance of caching dependencies (Gradle cache) to reduce build times from 5+ minutes to under 2 minutes whcih is extremely helpful with beign able to move on to the next tasks even quicker  such as:fixing the bugs,looking at the outcome or simply moving ot the enxt stage of the development proccess.
+- Gradle Build System: Provides powerful dependency management and build automation - learned to leverage incremental builds for faster compilation and better resource utilization
 
 
-Testing Strategy: Unit tests should run first in the pipeline to fail fast and save resources - integration tests can follow. Learned importance of test isolation and avoiding shared state
+- GitHub Actions: Discovered the importance of caching dependencies (Gradle cache) to reduce build times from 5+ minutes to under 2 minutes whcih is extremely helpful with beign able to move on to the next tasks even quicker  such as:fixing the bugs,looking at the outcome or simply moving ot the enxt stage of the development proccess.
 
-Future Improvements:
+
+- Testing Strategy: Unit tests should run first in the pipeline to fail fast and save resources - integration tests can follow. Learned importance of test isolation and avoiding shared state
+
+- Future Improvements:
 Containerization: Extend pipeline to include Docker image builds and push to container registry (Docker Hub/AWS ECR) with multi-stage builds for mroe effection work so simply optimization
 
-Kubernetes Deployment: Add automated deployment stages to K8s clusters for staging and production environments with health checks and rolling updates
+- Kubernetes Deployment: Add automated deployment stages to K8s clusters for staging and production environments with health checks and rolling updates
 
 
 ---
 
 
-⚡ Conclusion
+# Conclusion
 
-This project shows how GitHub Actions can transform a manual Java testing workflow into an automated CI/CD pipeline.
+- This project shows how GitHub Actions can transform a manual Java testing workflow into an automated CI/CD pipeline.
 It provides quick feedback, reduces human error, and makes development faster and more reliable.
 
 
