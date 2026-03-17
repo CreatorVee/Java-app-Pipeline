@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: java-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1        # one extra pod during update
+      maxUnavailable: 0  # never take a pod down before new one is ready
+  template:
+    metadata:
+      labels:
+        app: java-app
+    spec:
+      containers:
+        - name: java-app
+          image: java-app:latest
+          imagePullPolicy: Never   # uses local Minikube image
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_HOST
+              value: mysql
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: db-name
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: db-user
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: db-password
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 5
