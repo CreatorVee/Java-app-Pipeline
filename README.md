@@ -137,5 +137,9 @@ It provides quick feedback, reduces human error, and makes development faster an
 <img width="1023" height="444" alt="2025-09-11_10h56_21" src="https://github.com/user-attachments/assets/cbde6d14-2144-4e32-8649-ccfcfd5e77ef" />
 
 
+<img width="1175" height="271" alt="2026-03-19_22h34_36" src="https://github.com/user-attachments/assets/cb36732a-9008-471a-a910-3f9315b634cb" />
+
+
+
 
 
